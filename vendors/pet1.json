@@ -1,0 +1,19 @@
+{
+    "id": 999699608,
+    "category": {
+      "id": 1,
+      "name": "dog"
+    },
+    "name": "Laira",
+    "photoUrls": [
+      "string"
+    ],
+    "tags": [
+      {
+        "id": 1975,
+        "name": "Linda"
+      }
+    ],
+    "status": "available"
+  }
+  

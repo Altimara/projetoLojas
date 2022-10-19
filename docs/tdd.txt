@@ -1,0 +1,92 @@
+TDD = Test Driven Development
+    Desenvolvimento Direcionado por Testes
+                    BSTQB --> para ***
+
+
+Quando fizemos o teste de unidade?
+- antes de codificar?  <-- TDD
+- depois de codificar? <-- vimos nas aulas anteriores (comum)
+
+Exemplo:
+
+let somarDoisNumerosTdd = function somarDoisNumerosTdd(num1, num2){
+    //Todo: programar a soma de 2 numeros 
+    return ;
+}
+
+- Reunião de Sprint Planning
+> O time junto definiu 2 estórias
+> Essas estórias, os Devs entenderam 
+>que vão render 10 funcionalidades
+
+Eles são campazes de combinar e escrever:
+1 - o nome de cada uma das funcionalidades
+2 - os parametros de entrada (input)
+3 - comentarios sobre as funcionalidades
+4 - deixar um retorno temporátio (mock)
+
+Poderiam fazer então os esqueletos de código para 
+as 10 funcionalidades
+Pergunta?
+1 - Se eles têm esses esqueletos,
+    podem já criar os testes de unidade?
+    R: Sim (se só depende do time) ou 
+        Depende (se precisamos de permissão ou recursos externos)
+2 - Esses teste de unidade inicialmente darão que resultado? (passar/falhar)
+    R: Cuidado - relógio quebrado mostra a hora certa 2X dia 
+        Os testes devem falhar inicialmente porque ainda não esta funcionando
+3 - Para que serve fazer 10 testes de unidade que não passam inicialmente?
+    Exemplo:
+        dia     falhou      passou
+        1       10          0       foi o dia do TDD e teste unitário
+        2       8           2       --> 20% pronto (métrica de progresso)
+
+
+
+
+Resumindo o TDD:
+- criação dos testes da unidade antes da codificação principal
+- execução pelo menos diária dos testes de unidade
+- objetivo:
+    - medir o progresso (software funcionando)
+    - ter testes básicos para garantir a estabilidade
+        (descobrir que algo estava funcionando parou de funcionar)
+
+- como reduzir o risco de fraude?
+  através do code review (revisão de código)
+  - o code review ajuda muito:
+    - aumentar a maturidade
+    - melhora a qualidade do código
+    - criar padronização
+    - aprender e disseminar boas praticas de codificação
+
+    Teste de Unidade com grande cobertura (>=75%) garante o funcionamento básico (mínimo)
+    - repetitivel
+    - rápido de fazer e modificar
+    - barato
+    - aliado / faz parte da estratégia de Integração Contínua 
+        (IC / CI: Continuous Integration)
+
+    Integração Continua  --> Criar uma pipeline / esteira
+    Devs (local / ambiente de desenvolvimento)
+                                (compilar)
+    codificam       hora         build              pass          
+    o tempo Todo --> commit --->  testes de ---->   mover o  -->    ambiente de teste
+                    (salva no       unidade         release         stage
+                    repositório)    + outros        candidate
+    
+    Quando algo aind está em trabalho:
+    - ou faz o commit "desligado"
+    - ou faz um shelve ao invés de commit (shelve guardar para continuar amanhã)
+
+    Compilar na própria máquina é perigoso
+    --> "Na minha máquina funciona"  --> DLL Hell
+    Porque a maquina do Dev tem um monte de 
+    bibliotecas e recursos que o cliente ou 
+    o servidor de produção não tem
+
+"Ninguem atravessa o mesmo rio duas vezes"
+    Se esse processo automatizado chega a implantar em produção
+    Então, ele passa a se chamar de Entrega Continua (Continuous Delivery)
+
+    Nirvana
