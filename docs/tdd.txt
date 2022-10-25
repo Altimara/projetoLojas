@@ -1,7 +1,6 @@
 TDD = Test Driven Development
-    Desenvolvimento Direcionado por Testes
-                    BSTQB --> para ***
-
+      Desenvolvimento Direcionado por Testes
+                        BSTQB --> para ***
 
 Quando fizemos o teste de unidade?
 - antes de codificar?  <-- TDD
@@ -10,83 +9,101 @@ Quando fizemos o teste de unidade?
 Exemplo:
 
 let somarDoisNumerosTdd = function somarDoisNumerosTdd(num1, num2){
-    //Todo: programar a soma de 2 numeros 
-    return ;
+    // ToDo: programar a soma de 2 numeros
+    return 0;
 }
 
 - Reunião de Sprint Planning
 > O time junto definiu 2 estórias
-> Essas estórias, os Devs entenderam 
->que vão render 10 funcionalidades
+> Essas estórias, os desenvolvedores (devs) entenderam
+> que vão render 10 funcionalidades
 
-Eles são campazes de combinar e escrever:
+Eles são capazes de combinar e escrever:
 1 - o nome de cada uma das funcionalidades
 2 - os parametros de entrada (input)
-3 - comentarios sobre as funcionalidades
-4 - deixar um retorno temporátio (mock)
+3 - comentários sobre as funcionalidades
+4 - deixar um retorno temporário (mock)
 
 Poderiam fazer então os esqueletos de código para 
 as 10 funcionalidades
+
 Pergunta?
-1 - Se eles têm esses esqueletos,
+1 - Se eles têm esses esqueletos, 
     podem já criar os testes de unidade?
     R: Sim (se só depende do time) ou 
-        Depende (se precisamos de permissão ou recursos externos)
+       Depende (se precisamos de permissão ou recursos externos)
 2 - Esses teste de unidade inicialmente darão que resultado? (passar/falhar)
-    R: Cuidado - relógio quebrado mostra a hora certa 2X dia 
-        Os testes devem falhar inicialmente porque ainda não esta funcionando
+    R: Cuidado - relógio quebrado mostra a hora certa 2X por dia
+       Os testes devem falhar inicialmente porque ainda não está funcionando
 3 - Para que serve fazer 10 testes de unidade que não passam inicialmente?
     Exemplo:
-        dia     falhou      passou
-        1       10          0       foi o dia do TDD e teste unitário
-        2       8           2       --> 20% pronto (métrica de progresso)
+        dia     falhou  passou
+        1       10       0
+        2        8       2      --> 20% pronto (métrica de progresso)
+        3        5       5      --> 50% pronto (recuperei parte do atraso)    
+        4        6       4      --> 40% pronto (algo novo quebrou algo antigo)
+        5        0      10      --> Corrigiu e completou a previsão da semana
 
+        Gráfico de Burndown
 
+        10  ##
+        
+               ##
+
+                   PP
+        05
+                        PP
+
+                            PP
+        01
+        -----------------------------------------
+            01  02  03  04  05
 
 
 Resumindo o TDD:
-- criação dos testes da unidade antes da codificação principal
-- execução pelo menos diária dos testes de unidade
+- criação dos testes de unidade antes da codificação principal
+- execução pelo menos diaria dos testes de unidade
 - objetivo:
     - medir o progresso (software funcionando)
     - ter testes básicos para garantir a estabilidade
-        (descobrir que algo estava funcionando parou de funcionar)
-
+      (descobrir que algo que estava funcionando parou de funcionar)
 - como reduzir o risco de fraude?
   através do code review (revisão de código)
   - o code review ajuda muito:
     - aumentar a maturidade
     - melhora a qualidade do código
     - criar padronização
-    - aprender e disseminar boas praticas de codificação
+    - aprender e disseminar boas práticas de codificação
 
-    Teste de Unidade com grande cobertura (>=75%) garante o funcionamento básico (mínimo)
-    - repetitivel
-    - rápido de fazer e modificar
-    - barato
-    - aliado / faz parte da estratégia de Integração Contínua 
-        (IC / CI: Continuous Integration)
+Teste de Unidade com grande cobertura (>= 75%) garante o funcionamento básico (mínimo)
+- repetitivel
+- rápido de fazer e modificar
+- barato
+- aliado / faz parte da estratégia de Integração Continua (IC / CI: Continuous Integration)
 
-    Integração Continua  --> Criar uma pipeline / esteira
-    Devs (local / ambiente de desenvolvimento)
-                                (compilar)
-    codificam       hora         build              pass          
-    o tempo Todo --> commit --->  testes de ---->   mover o  -->    ambiente de teste
-                    (salva no       unidade         release         stage
-                    repositório)    + outros        candidate
-    
-    Quando algo aind está em trabalho:
-    - ou faz o commit "desligado"
-    - ou faz um shelve ao invés de commit (shelve guardar para continuar amanhã)
+Integração Continua --> Criar uma pipeline / esteira
 
-    Compilar na própria máquina é perigoso
-    --> "Na minha máquina funciona"  --> DLL Hell
-    Porque a maquina do Dev tem um monte de 
-    bibliotecas e recursos que o cliente ou 
-    o servidor de produção não tem
+devs (local / ambiente de desenvolvimento)
+                      (compilar)
+codificam    hora       build          pass
+o tempo ToDo --> commit ---> testes de ---> mover o ---> ambiente de teste
+               (salva no      unidade       release      stage / pré-produção
+              repositório)   + outros      candidate     (mais testes)
+                            
+Quando algo ainda está em trabalho:
+- ou faz o commit "desligado"
+- ou faz um shelve ao invés de commit
 
-"Ninguem atravessa o mesmo rio duas vezes"
-    Se esse processo automatizado chega a implantar em produção
-    Então, ele passa a se chamar de Entrega Continua (Continuous Delivery)
+Compilar na própria máquina é perigoso
+--> "Na minha máquina funciona" --> DLL Hell
+Porque a maquina do Dev tem um monte de
+bibliotecas e recursos que o cliente ou
+o servidor de produção não tem
 
-    Nirvana
+
+"Ninguém atravessa o mesmo rio duas vezes" 
+
+Se esse processo automatizado chega a implantar em produção
+Então, ele passa a se chamar de Entrega Continua (Continuous Delivery)
+
+Nirvana
