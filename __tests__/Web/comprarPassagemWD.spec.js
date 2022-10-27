@@ -1,10 +1,11 @@
 // Configura
+// >>>>> arrumar as variáveis de ambiente e rodar novamente este material
 // Bibliotecas (funções que outras pessoas já fizeram, agiliza o processo todo, necessário saber a procedencia)
 
 const { Builder, By} = require ("selenium-webdriver") // Builder é o construtor do selenium
-const { assert } = require ("assert")
+const { assert } = require ("chai").assert
 const chromedriver = require("chromedriver") // referencia ao Chrome Driver
-
+const webdriver = require ("selenium-driver")
 // Executa, describe usa no jest
 describe("Comprar Passagem via programação",() => {
 
@@ -23,7 +24,7 @@ describe("Comprar Passagem via programação",() => {
         await driver.quit();  //destroir o objeto do Selenium WebDriver
     })
     // Testar
-    it("Comprar Passagem WD", async function(){
+    it("Comprar Passagem WD", async ()=> {
         //abrir o site, sendo controlado pelo Selenium
         await driver.get("https://www.blazedemo.com/")  
         // clicar no combo origem / embarque
@@ -46,7 +47,7 @@ describe("Comprar Passagem via programação",() => {
     
         // VAlida
         // Valida se foi para a página de reserva
-        //driver.sleep(5000)
+        driver.sleep(5000)
         assert.equal(await driver.getTitle() == "BlazeDemo - reserve")    //assert(atual, "esperado")
         
     })
