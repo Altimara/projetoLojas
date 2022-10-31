@@ -16,22 +16,25 @@ class HomePage extends BasePage {  //Home page herda do Base Page, tem que esten
         this.dropDownDestino = By.name ("toPort");
         this.ctnProcurarVoos = By.css(".btn-primary");
     }
+
     // Criar ações baseadas nos elementos mapeados
 
+    //Clica na sugestão / promoção da semana
     async consultarDestinoDaSemana(){
         await this.driver.FindElement (this.linkDaSemana).click();
     }
+    
     // Selecionar a origem e destino de um voo
     async selecionarOrigemDestinoVoo(origem, destino){
         // Selecionar origem
         // primeiro seleciona o dropdown / combo origem
         let ddOrigem = await this.driver.FindElement(this.dropDownOrigem);
         // em segundo lugar, selecionar a opção dropdowb / combo
-        await ddOrigem.findElement(By.css(`[value]=${origem}`)).click();
+        await ddOrigem.findElement(By.css(`[value="${origem}"]`)).click();
 
         //Selecionar destino
         let ddDestino = await this.driver.FindElement(this.dropDownDestino);
-        await ddDestino.findElement(By.css(`[value]=${destino}`)).clck();
+        await ddDestino.findElement(By.css(`[value ="${destino}"]`)).click();
 
         // Clicar no botão Find Flights
         await this.driver.findElement(this.btnProcurarVoos).click();
